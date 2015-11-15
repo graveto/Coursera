@@ -1,0 +1,34 @@
+body {
+  background: url(garden.jpg) no-repeat right top;
+  color: white;
+  font-size: 12px;
+}
+
+h1 {
+  margin: 3em 0 0 0;
+  font-size:3em;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+ul li {
+  display: inline-block;
+}
+
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size: 10em;
+  }
+}
+
+footer {
+  margin-top: 5em;
+}
+
+footer p {
+  padding: 2em;
+  background-color: rgba(0,0,0, 0.60);
+}

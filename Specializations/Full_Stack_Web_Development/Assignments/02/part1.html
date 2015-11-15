@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the Color Game</title>
+</head>
+<body>
+<script>
+  var colors = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange",
+    "red", "white", "yellow"];
+
+  var finished = false;
+  var countGuesses = 0;
+
+  var chooseColor = function() {
+    return prompt("I am thinking of one of these colors\n\r" +
+      "blue, cyan, gold, gray, green, magenta, orange, red, white, yellow\n\r" +
+      "What color am I thinking of?");
+  };
+
+  var colorPosition = Math.floor(Math.random() * colors.length);
+  var mySelectedColor = colors[colorPosition];
+  alert(mySelectedColor);
+
+  var selectedColor = chooseColor();
+  var myBody = window.document.getElementsByTagName("body")[0];
+
+  var doGame = function() {
+    while(!finished) {
+      checkColorGuess(mySelectedColor);
+    }
+  };
+
+  function checkColorGuess(mySelectedColor) {
+    if (colors.indexOf(selectedColor) < 0) {
+      selectedColor = chooseColor();
+    } else if(selectedColor > mySelectedColor) {
+      selectedColor = chooseColor();
+    } else if(selectedColor < mySelectedColor) {
+      selectedColor = chooseColor();
+    } else {
+      finished = true;
+    }
+  }
+
+  window.onload = doGame;
+</script>
+</body>
+</html>
